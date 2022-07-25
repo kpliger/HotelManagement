@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-HotelManagement-955D30F7-CFD7-4C1F-8E6A-D82746E06A98</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20211004023031_intialsetup.cs" />
+    <Compile Remove="Data\Migrations\20211004023031_intialsetup.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204055446_timestamp2.cs" />
+    <Compile Remove="Data\Migrations\20211204055446_timestamp2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204060117_timestamp3.cs" />
+    <Compile Remove="Data\Migrations\20211204060117_timestamp3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204060901_timestamp4.cs" />
+    <Compile Remove="Data\Migrations\20211204060901_timestamp4.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204061230_timestamp3.cs" />
+    <Compile Remove="Data\Migrations\20211204061230_timestamp3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204061639_timestamp3.cs" />
+    <Compile Remove="Data\Migrations\20211204061639_timestamp3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204225801_timestamp3.cs" />
+    <Compile Remove="Data\Migrations\20211204225801_timestamp3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211204230134_timestamp3.cs" />
+    <Compile Remove="Data\Migrations\20211204230134_timestamp3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211205235104_AddForiegnKey.cs" />
+    <Compile Remove="Data\Migrations\20211205235104_AddForiegnKey.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220421001001_AddOrderAndOrderItem2.cs" />
+    <Compile Remove="Data\Migrations\20220421001001_AddOrderAndOrderItem2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlSanitizer" Version="7.1.488" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.24">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\lib\bootstrap\" />
+    <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="wwwroot\lib\jquery-validation\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="wwwroot\lib\jquery\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
+    <Folder Include="wwwroot\uploads\ItemImages\" />
+  </ItemGroup>
+
+</Project>

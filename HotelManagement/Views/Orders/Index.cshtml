@@ -1,0 +1,121 @@
+﻿@model IEnumerable<HotelManagement.Models.Order>
+
+@{
+    ViewData["Title"] = "Audits";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Creator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_updated)
+            </th>
+            <th>
+                Primary
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @ViewBag.emps[item.Id]
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_updated)
+            </td>
+            <td>
+                <input type="radio" value="@item.Id" id="primary_@item.Id" name="primary" />
+                <span id="primaryResponse"></span>
+            </td>
+            <td>
+                @if (ViewBag.userPermission == "ADMIN")
+                {
+                    <span>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    </span>
+                }
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+{
+    <script>
+
+        var primaryOrder = '@ViewBag.primaryOrder';
+
+        $(function () {
+            if (primaryOrder != '') {
+                $("#primary_" + primaryOrder).prop("checked", true);
+            }
+            $(document).on("change", "[name=primary]", changePrimaryOrder);
+        });
+
+        function changePrimaryOrder() {
+            var elem = $(event.target);
+            var orderId = elem.val();
+            $.ajax({
+                url: 'Orders/setPrimaryOrder',
+                type: "POST",
+                dataType: "text json",
+                data: {
+                    order: orderId
+                },
+                success: function (response) {
+                    elem.next().html(response.message).show().fadeOut(1000);
+                    if (!response.status) {                    
+                        if (primaryOrder != '') {
+                            $("#primary_" + primaryOrder).prop("checked", true);
+                        } else {
+                            $("[name=primary]").prop("checked", false);
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+}

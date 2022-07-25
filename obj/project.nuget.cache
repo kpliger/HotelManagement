@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lSezrCaY+ucpv4Vb40b87rshn/PvkSpc5KQ0Kv++BAgFilisUgwrQHFrGyZq4hyabcyIs0nLWH6+d24gYWmNpQ==",
+  "dgSpecHash": "0dvoQxDCd1R9lShH6Oaiw6s1pG3JFI2Oxw5bDw6QV/nc/qOpDAQDAElGLGpt1XriWHn5LZrOeqb67Wyhf7jc3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\KevinLigeralde\\source\\repos\\HotelMngt\\HotelManagement\\HotelManagement.csproj",
+  "projectFilePath": "C:\\Users\\KevinLigeralde\\source\\repos\\HotelMngt\\HotelManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KevinLigeralde\\.nuget\\packages\\anglesharp\\0.16.1\\anglesharp.0.16.1.nupkg.sha512",
     "C:\\Users\\KevinLigeralde\\.nuget\\packages\\anglesharp.css\\0.16.4\\anglesharp.css.0.16.4.nupkg.sha512",
